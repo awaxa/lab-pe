@@ -14,6 +14,7 @@ roles:
     provisioners:
       - {type: hosts}
       - {type: pe_bootstrap, role: !ruby/sym master}
+      - {type: shell, inline: "/opt/puppet/bin/puppet apply --exec 'service {'iptables': ensure => 'stopped', enable => false }'"}
 
   pe-puppet-agent:
     private_networks:
