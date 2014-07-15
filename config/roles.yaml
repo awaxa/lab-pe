@@ -15,6 +15,7 @@ roles:
       - {type: hosts}
       - {type: pe_bootstrap, role: !ruby/sym master}
       - {type: shell, inline: "/opt/puppet/bin/puppet apply --exec 'service {'iptables': ensure => 'stopped', enable => false }'"}
+      - {type: shell, path: 'scripts/bootstrap_r10k.sh' }
 
   pe-puppet-agent:
     private_networks:
