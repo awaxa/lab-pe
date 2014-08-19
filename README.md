@@ -6,4 +6,6 @@
 - [oscar vagrant plugin](https://github.com/adrienthebo/oscar)
 
 ## usage
+    $ git clone https://github.com/awaxa/lab-pe.git
+    $ cd lab-pe
     $ vagrant up
