@@ -9,5 +9,5 @@
 ## usage
     $ git clone https://github.com/awaxa/lab-pe.git
     $ cd lab-pe
-    $ git clone https://github.com/awaxa/lab-pe_puppet-control.git control
+    $ git clone https://github.com/awaxa/control.git
     $ vagrant up
