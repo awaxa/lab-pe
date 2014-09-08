@@ -7,6 +7,8 @@ Vagrant.configure('2') do |config|
 
   config.vm.define :master do |master|
     master.vm.box = 'puppetlabs/centos-6.5-64-nocm'
+    # master.vm.box = 'centos-65-x64-vbox436-nocm'
+    # master.vm.box_url = 'http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-nocm.box'
     master.vm.provider 'virtualbox' do |vb|
       vb.customize ['modifyvm', :id, '--memory', '2048']
       vb.customize ['modifyvm', :id, '--cpus', '1']
@@ -28,6 +30,8 @@ Vagrant.configure('2') do |config|
 
   config.vm.define :agent do |agent|
     agent.vm.box = 'puppetlabs/centos-6.5-64-nocm'
+    # master.vm.box = 'centos-65-x64-vbox436-nocm'
+    # master.vm.box_url = 'http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-nocm.box'
     agent.vm.network :private_network, :auto_network => true
     agent.vm.provision :hosts
     agent.vm.provision :pe_bootstrap
