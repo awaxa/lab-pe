@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure('2') do |config|
-  config.pe_build.version = '3.3.1'
+  config.pe_build.version = '3.3.2'
   config.pe_build.download_root = 'http://s3.amazonaws.com/pe-builds/released/:version'
 
   config.vm.define :master do |master|
