@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+ENV['CONTROL'] ||= '/vagrant/control'
+
 Vagrant.configure('2') do |config|
   config.pe_build.version = '3.3.2'
   config.pe_build.download_root = 'http://s3.amazonaws.com/pe-builds/released/:version'
@@ -25,7 +27,8 @@ Vagrant.configure('2') do |config|
     master.vm.provision 'shell',
       inline: "/opt/puppet/bin/puppet apply --exec 'service {'iptables': ensure => 'stopped', enable => false }'"
     master.vm.provision 'shell',
-      path: 'scripts/bootstrap_r10k.sh'
+      path: 'scripts/bootstrap_r10k.sh',
+      args: ENV['CONTROL']
   end
 
   config.vm.define :agent do |agent|
